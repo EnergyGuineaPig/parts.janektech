@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="logo.png">
+   <title>Parts · JanekTech</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1320;
+      --panel: #121c2f;
+      --blue: #4da3ff;
+      --blue-soft: #78b9ff;
+      --text: #cfe4ff;
+      --border: #1f3b63;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "JetBrains Mono", monospace;
+      background: radial-gradient(circle at top, #12203a, var(--bg));
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      background: var(--panel);
+      border-radius: 28px;
+      padding: 48px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 40px rgba(77, 163, 255, 0.15);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      letter-spacing: 2px;
+      color: var(--blue-soft);
+    }
+
+    .logo {
+      margin: 32px 0;
+      font-size: 42px;
+      font-weight: 600;
+      color: var(--blue);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 999px;
+      border: 1px solid var(--blue);
+      background: transparent;
+      color: var(--blue);
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--blue);
+      color: #081220;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: var(--blue-soft);
+      letter-spacing: 1px;
+    }
+
+    .project {
+      margin-top: 16px;
+      opacity: 0.9;
+    }
+
+    video {
+      margin-top: 24px;
+      max-width: 100%;
+      border-radius: 20px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 20px rgba(77, 163, 255, 0.2);
+    }
+
+    .frame {
+      position: absolute;
+      inset: 16px;
+      border-radius: 32px;
+      border: 1px solid rgba(77, 163, 255, 0.25);
+      pointer-events: none;
+    }
+    .logo-img {
+        width: 160px;        /* 👈 tu zmieniasz rozmiar */
+        max-width: 60%;
+        height: auto;
+        margin: 24px auto;
+        display: block;
+
+        border-radius: 18px;        /* opcjonalnie */
+        filter: drop-shadow(0 0 12px rgba(77,163,255,0.35)); /* glow */
+    }
+    .modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 10, 20, 0.75);
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    }
+
+    .modal-content {
+    background: var(--panel);
+    border: 2px solid var(--border);
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 520px;
+    width: 90%;
+    box-shadow: 0 0 40px rgba(77,163,255,0.25);
+    text-align: center;
+    }
+
+    .modal-content p {
+    opacity: 0.9;
+    margin-bottom: 16px;
+    }
+
+
+  </style>
+</head>
+<!-- ABOUT MODAL -->
+<div id="aboutModal" class="modal">
+  <div class="modal-content">
+    <h2>ABOUT · PARTS</h2>
+    <p>
+      <b>Parts · JanekTech</b> is a technical section focused on
+      hardware, electronics and experimental systems.
+    </p>
+    <p>
+      This site documents ongoing projects, internal tools
+      and engineering experiments developed under the JanekTech brand.
+    </p>
+    <button class="btn" onclick="closeAbout()">Close</button>
+  </div>
+</div>
+<script>
+  function openAbout() {
+    document.getElementById("aboutModal").style.display = "flex";
+  }
+
+  function closeAbout() {
+    document.getElementById("aboutModal").style.display = "none";
+  }
+</script>
+
+
+<body>
+  <div class="container">
+    <div class="frame"></div>
+
+    <h1>WELCOME to the PARTS Section of JANEKTECH site</h1>
+
+    <img src="logo.png" alt="Parts JanekTech logo" class="logo-img">
+
+
+    <div class="buttons">
+      <button class="btn" onclick="openAbout()">About</button>
+      <a class="btn" href="JMBEIS">JMBCEIS</a>
+
+    </div>
+
+    <h2>CURRENTLY WORKING ON</h2>
+    <div class="project">JanekTech Motorized bicycle electronic ignition system</div>
+
+
+  </div>
+</body>
+</html>
